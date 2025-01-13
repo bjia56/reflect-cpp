@@ -102,7 +102,7 @@ struct Writer {
       return OutputVarType(static_cast<double>(_var));
     } else if constexpr (std::is_integral<std::remove_cvref_t<T>>()) {
       if constexpr (sizeof(T) > sizeof(int)) {
-        return OutputVarType(static_cast<long>(_var));
+        return OutputVarType(static_cast<int64_t>(_var));
       } else {
         return OutputVarType(static_cast<int>(_var));
       }

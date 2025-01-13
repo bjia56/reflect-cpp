@@ -111,8 +111,8 @@ Result<int> Generic::to_int() const noexcept {
   }
 }
 
-Result<long> Generic::to_long() const noexcept {
-  if (const long* ptr = std::get_if<long>(&value_)) {
+Result<int64_t> Generic::to_int64() const noexcept {
+  if (const int64_t* ptr = std::get_if<int64_t>(&value_)) {
     return *ptr;
   } else {
     return Error(
